@@ -1,0 +1,40 @@
+cat << 'EOF' > .gitignore
+# R History and Workspace files
+.Rhistory
+.RData
+.RDataTmp
+.Rapp.history
+
+# R User data and cache
+.Rproj.user/
+.Rcache/
+
+# R environment & package build artifacts
+.Renviron
+*.Rcheck/
+*.so
+*.o
+*.dylib
+*.dll
+*.tar.gz
+
+# Renv / Virtual Environments
+renv/library/
+renv/python/
+renv/staging/
+
+# Temporary & Log files
+*.log
+*.tmp
+*.temp
+.tmp/
+
+# Data & Output cache (uncomment if handling sensitive/large data)
+# data/raw/
+# *.rds
+# *.RData
+
+# OS specific files
+.DS_Store
+Thumbs.db
+EOF
