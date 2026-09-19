@@ -1085,8 +1085,8 @@ for(i in 1:nrow(spat_full_data)){
   print(i)
 }
 
-write(mse_h_ts, "/Users/srijanch/Downloads/mse_h_ts.txt")
-write(mse_h_val_ts, "/Users/srijanch/Downloads/mse_h_val_ts.txt")
+write.csv(mse_h_ts, "/Users/srijanch/Downloads/mse_h_ts.csv")
+write.csv(mse_h_val_ts, "/Users/srijanch/Downloads/mse_h_val_ts.csv")
 
 mse_h_ts_ext = numeric()
 mse_h_val_ts_ext = numeric()
@@ -1117,8 +1117,8 @@ for(i in 1:nrow(spat_full_data)){
 }
 
 
-write(mse_h_ts_ext, "/Users/srijanch/Downloads/mse_h_ts_ext.txt")
-write(mse_h_val_ts_ext, "/Users/srijanch/Downloads/mse_h_val_ts_ext.txt")
+write.csv(mse_h_ts_ext, "/Users/srijanch/Downloads/mse_h_ts_ext.csv")
+write.csv(mse_h_val_ts_ext, "/Users/srijanch/Downloads/mse_h_val_ts_ext.csv")
 
 #### Penalization
 EE1E2_s_diffpenalty = function(s,df,lambda1,lambda2){
