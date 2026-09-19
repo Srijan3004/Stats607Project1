@@ -1307,7 +1307,7 @@ for (i in seq_len(nStn)) {
   }
 }
 
-write(mse_arr, "~/Downloads/mse_arr.Rds")
+saveRDS(mse_arr, "/Users/srijanch/Downloads/mse_arr.Rds")
 
 FF1_cache_ext <- list()
 ratio = 0.9
@@ -1345,7 +1345,8 @@ for (i in seq_len(nStn)) {
   }
 }
 
-write(mse_arr_ext, "~/Downloads/mse_arr_ext.Rds")
+saveRDS(mse_arr_ext, "/Users/srijanch/Downloads/mse_arr_ext.Rds")
+
 
 pdf("~/Downloads/Trend_SS_Pred_for_Smooth_TS.pdf", width = 18, height = 10)
 for(i in seq_len(nStn)){

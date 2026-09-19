@@ -1,4 +1,4 @@
-pdf("~/Downloads/Trend_SS_Pred_for_Smooth_TS.pdf", width = 18, height = 10)
+pdf("results/model_plots/Trend_SS_Pred_for_Smooth_TS.pdf", width = 18, height = 10)
 for(i in seq_len(nStn)){
   if (is.na(sum(mse_arr[i,,]))==FALSE && !inherits(try(trend_ss_estimate_smoothing(i, 8, mse_h_ts[i], 9), silent=TRUE), "try-error") && is.na(mse_h_ts[i]) == FALSE ) {
     st_type <- as.character(spat_full_data[i, 4])
@@ -213,7 +213,7 @@ dev.off()
 
 
 
-pdf("~/Downloads/Trend_SS_Pred_for_Smooth_TS_reflecting_boundary.pdf", width = 18, height = 10)
+pdf("results/model_plots/Trend_SS_Pred_for_Smooth_TS_reflecting_boundary.pdf", width = 18, height = 10)
 for(i in seq_len(nStn)){
   if (is.na(sum(mse_arr_ext[i,,]))==FALSE && !inherits(try(trend_ss_estimate_smoothing_ext(i, 8, mse_h_ts[i], 9), silent=TRUE), "try-error") && is.na(mse_h_ts[i]) == FALSE ) {
     st_type <- as.character(spat_full_data[i, 4])
