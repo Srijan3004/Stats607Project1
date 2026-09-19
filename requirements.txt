@@ -1,0 +1,23 @@
+# R Version Required
+R >= 4.3.0
+
+# Core R Packages
+tidyverse
+ggplot2
+dplyr
+readr
+data.table
+
+# Other R Packages
+haven
+forecast
+sf
+rnaturalearth
+rnaturalearthdata
+zoo
+reshape2
+splines
+stats
+gridExtra
+forecast
+splines2
