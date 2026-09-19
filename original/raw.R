@@ -1085,6 +1085,9 @@ for(i in 1:nrow(spat_full_data)){
   print(i)
 }
 
+write(mse_h_ts, "/Users/srijanch/Downloads/mse_h_ts.txt")
+write(mse_h_val_ts, "/Users/srijanch/Downloads/mse_h_val_ts.txt")
+
 mse_h_ts_ext = numeric()
 mse_h_val_ts_ext = numeric()
 for(i in 1:nrow(spat_full_data)){
@@ -1113,6 +1116,9 @@ for(i in 1:nrow(spat_full_data)){
   print(i)
 }
 
+
+write(mse_h_ts_ext, "/Users/srijanch/Downloads/mse_h_ts_ext.txt")
+write(mse_h_val_ts_ext, "/Users/srijanch/Downloads/mse_h_val_ts_ext.txt")
 
 #### Penalization
 EE1E2_s_diffpenalty = function(s,df,lambda1,lambda2){
@@ -1301,6 +1307,8 @@ for (i in seq_len(nStn)) {
   }
 }
 
+write(mse_arr, "~/Downloads/mse_arr.Rds")
+
 FF1_cache_ext <- list()
 ratio = 0.9
 for (t in types) {
@@ -1337,7 +1345,9 @@ for (i in seq_len(nStn)) {
   }
 }
 
-pdf("Downloads/Trend_SS_Pred_for_Smooth_TS.pdf", width = 18, height = 10)
+write(mse_arr_ext, "~/Downloads/mse_arr_ext.Rds")
+
+pdf("~/Downloads/Trend_SS_Pred_for_Smooth_TS.pdf", width = 18, height = 10)
 for(i in seq_len(nStn)){
   if (is.na(sum(mse_arr[i,,]))==FALSE && !inherits(try(trend_ss_estimate_smoothing(i, 8, mse_h_ts[i], 9), silent=TRUE), "try-error") && is.na(mse_h_ts[i]) == FALSE ) {
     st_type <- as.character(spat_full_data[i, 4])
@@ -1552,7 +1562,7 @@ dev.off()
 
 
 
-pdf("Downloads/Trend_SS_Pred_for_Smooth_TS_reflecting_boundary.pdf", width = 18, height = 10)
+pdf("~/Downloads/Trend_SS_Pred_for_Smooth_TS_reflecting_boundary.pdf", width = 18, height = 10)
 for(i in seq_len(nStn)){
   if (is.na(sum(mse_arr_ext[i,,]))==FALSE && !inherits(try(trend_ss_estimate_smoothing_ext(i, 8, mse_h_ts[i], 9), silent=TRUE), "try-error") && is.na(mse_h_ts[i]) == FALSE ) {
     st_type <- as.character(spat_full_data[i, 4])
