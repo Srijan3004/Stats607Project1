@@ -18,10 +18,10 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 
-# Ensure output directories exist
-if (!dir.exists("artifacts/plots")) {
-  dir.create("artifacts/plots", recursive = TRUE)
-}
+
+full_data = read.csv("data/processed/full_data_wb.csv")
+data_monthly_agg = read.csv("data/processed/data_monthly_agg.csv")
+
 
 # ==============================================================================
 # 1. ALIPUR
@@ -211,8 +211,10 @@ for (i in 1:12) {
 df2$sn = c(rep(NA, 179), dat21$sn, dat22$sn, dat23$sn, dat24$sn, rep(NA, 180))
 df2_2 = na.omit(df2)
 
-seasonality1_2 = dat21$sn[2:13]  seasonality2_2 = dat22$sn[1:12] 
-seasonality3_2 = dat23$sn[1:12]  seasonality4_2 = dat24$sn[1:12] 
+seasonality1_2 = dat21$sn[2:13] 
+seasonality2_2 = dat22$sn[1:12] 
+seasonality3_2 = dat23$sn[1:12] 
+seasonality4_2 = dat24$sn[1:12] 
 
 season2 = cbind.data.frame(
   time1 = seasonality1_2, 
@@ -309,8 +311,10 @@ for (i in 1:12) {
 df3$sn = c(rep(NA, 179), dat31$sn, dat32$sn, dat33$sn, dat34$sn, rep(NA, 180))
 df3_3 = na.omit(df3)
 
-seasonality1_3 = dat31$sn[2:13]  seasonality2_3 = dat32$sn[1:12] 
-seasonality3_3 = dat33$sn[1:12]  seasonality4_3 = dat34$sn[1:12] 
+seasonality1_3 = dat31$sn[2:13] 
+seasonality2_3 = dat32$sn[1:12] 
+seasonality3_3 = dat33$sn[1:12]  
+seasonality4_3 = dat34$sn[1:12] 
 
 season3 = cbind.data.frame(
   time1 = seasonality1_3, 

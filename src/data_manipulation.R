@@ -22,7 +22,7 @@ station = sort(unique(data$STATION)) # Sorting the stations name-wise
 data1 = data[, 6:372] # Extraction of numeric daily rainfall columns
 
 # Load secondary spatial/temporal dataset
-full_data = read.csv("data/raw/full_data_wb.csv")[,-1]
+full_data = read.csv("data/processed/full_data_wb.csv")[,-1]
 
 # Filter out incomplete year 2021 records
 full_data = full_data[-which(full_data$YEAR == "2021"), ]
